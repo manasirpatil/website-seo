@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="basic.css" rel="stylesheet">
+<title>About Us | Havoc Sports</title>
+<link rel="icon" type="image/jpg" href="logo1.jpg">
+<style type="text/css">
+  #ab{
+    margin: 20px;
+  }
+
+  button{
+    font-family: bodyFont;
+    font-weight: bold;
+  }
+	
+</style>
+<script type="text/javascript">
+  function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      myFunction(xhttp);
+    }
+  };
+  xhttp.open("GET", "Car.xml", true);
+  xhttp.send();
+}
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table="<tr><th>Name</th><th>ID</th><th>Age</th><th>Area</th></tr>";
+  var x = xmlDoc.getElementsByTagName("PD");
+  for (i = 0; i <x.length; i++) { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue +
+    "</td><td>"+
+  x[i].getElementsByTagName("age")[0].childNodes[0].nodeValue +
+    "</td><td>"+
+  x[i].getElementsByTagName("area")[0].childNodes[0].nodeValue +
+    "</td></tr>";        
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+</script>
+</head>
+<body>
+	<div id="top">
+	<a href="Home.html"><img id="logo" src="logo1.jpg" alt="logo" >
+	<br>
+	<div id="name"><h1>Havoc Sports</h1>
+	<h2><i> Das Auto</i></h2></div></a>
+	
+<table style="width:100%" id="pages">	
+	<tr>
+		<th><div class="box"><a href="models.html">Models</a></div></th>
+    <th><div class="box"><a href="CustomerService.html">Customer Service</a></div></th> 
+    <th><div class="box"><a href="TestDrive.html">Test Drive</a></div></th>
+    <th><div class="curr">About Us</div></th>
+	</tr>
+</table>
+</div>
+<br><br>
+<div id="ab">
+<font face="bFont" size="5" >Click to have a look at our dear patrons and members</font>
+<br>
+<br>
+<button type="button" onclick="loadDoc()" class="button">Members Table</button>
+<br>
+<table id="demo"></table>
+<br>
+<p><font face="bFont" size="5" >
+  Why join us?</font><br><br><font face="bodyFont" size="3" color="grey">
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</font><br><br><br>
+<font face="bFont" size="5">Where does it come from?</font><br><br><font face="bodyFont" size="3" color="grey">
+Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.<br>
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</font></p>
+<br><br>
+</div>
+
+<div id="footer">
+  <a href="Home.html"><img id="foot" src="logo1.jpg" alt="logo"></a>
+    <br>Havoc Sports N.V. - Holding company - A company under Dutch law, having its official seat in Amsterdam, the Netherlands and its corporate address at Via Abetone Inferiore No. 4, I-41053 Maranello (MO), Italy, registered with the Dutch trade register under number 64060977
+
+    <br><br>Havoc Sports S.p.A. - A company under Italian law, having its registered office at Via Emilia Est No. 1163, Modena, Italy, Companies’ Register of Modena, VAT and Tax number 00159560366 and share capital of Euro 20,260,000
+
+    <br><br>Copyright 2019 - All rights reserved
+  <br><br><a href="https://twitter.com/login"><img src="social1.png" alt="social1" class="social"></a>
+  <a href="https://www.instagram.com/"><img src="social2.png" alt="social2" class="social"></a>
+  <a href="https://www.facebook.com/"><img src="social3.png" alt="social3" class="social"></a>
+</div>
+</div>
+</body>
+</html>
+
